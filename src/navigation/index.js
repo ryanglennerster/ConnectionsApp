@@ -12,6 +12,7 @@ import NewPasswordScreen from '../screens/NewPasswordScreen';
 import ChatDetailsScreen from '../screens/ChatDetailsScreen/Index';
 import ChatScreen from '../screens/ChatScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import { Ionicons } from '@expo/vector-icons'; 
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -20,7 +21,34 @@ const Navigation = () => {
 
     const HomeTabs = () => {
         return (
-            <Tab.Navigator>
+            <Tab.Navigator
+                screenOptions={({route}) => ({
+                    headerShown: false,
+                    tabBarIcon: ({focused}) => {
+                        let iconName;
+                        if(route.name === "Home") {
+                            iconName = "home";
+                        } else if (route.name === "Chat") {
+                            iconName = "chatbubbles-outline";
+                        } else if (route.name === "Profile") {
+                            iconName = "person-outline"
+                        }
+
+                        const customizeSize = 25
+
+                        return <Ionicons name={iconName} size={customizeSize} color={focused ? "#3B82F6" : "gray"}/>
+                    },
+
+                    tabBarActiveTintColor: "#3b82f6",
+                    tabBarLabelStyle: {
+                        fontWeight: "bold"
+                    },
+                    tabBarInactiveTintColor: "gray",
+                    tabBarStyle: {
+                        backgroundColor: "white",
+                    }
+            })}
+            >
                 <Tab.Screen name='Home' component={HomeScreen} />
                 <Tab.Screen name='Chat' component={ChatScreen} />
                 <Tab.Screen name='Profile' component={ProfileScreen} />
