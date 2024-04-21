@@ -35,7 +35,6 @@ export default function ChatScreen() {
             </View>
         <Matches />
 
-        {/* Search Bar */}
         <View className="mx-4 mt-6 flex-row items-center rounded-2xl bg-neutral-200 px-3 py-4">
             <TextInput
                 placeholder="Search"
@@ -49,7 +48,6 @@ export default function ChatScreen() {
                 <MagnifyingGlassIcon size={hp(2.5)} color={"gray"} strokeWidth={3} />
             </View>
         </View>
-        {/* Chat List */}
         <View className="px-4">
             <View className="border-b border-neutral-300 py-4">
                 <Text className="uppercase font-semibold text-neutral-500 tracking-wider ">
@@ -71,7 +69,6 @@ export default function ChatScreen() {
                         })
                         }
                     >
-                        {/* Avatar */}
                         <View
                             className="w-[17%] justify-center"
                             style={{
@@ -88,7 +85,6 @@ export default function ChatScreen() {
                                 className="rounded-full"
                             />
                         </View>
-                        {/* Information */}
                         <View
                             className="w-[82%]"
                             style={{
