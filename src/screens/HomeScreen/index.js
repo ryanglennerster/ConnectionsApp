@@ -32,7 +32,7 @@ const HomeScreen = () => {
     }
 
     return (
-        <SafeAreaView  onLayout={onLayoutRootView} className="bg-white flex-1 justify-between" style={{paddingTop: android ? hp(2) : 0}}>
+        <SafeAreaView onLayout={onLayoutRootView} className="bg-white flex-1 justify-between" style={{paddingTop: android ? hp(2) : 0}}>
             <View className="w-full flex-row justify-between items-center px-4 mb-8">
                 <View className="rounded-full items-center justify-center">
                     <Image
@@ -60,7 +60,7 @@ const HomeScreen = () => {
 
             </View>
             <View className="pb-4">
-                <View className="mx-4 mb-4">
+                <View className="mx-4 mb-5">
                     <Text className="capitalize text-2xl font-semibold" style={{fontFamily: "Montserrat-Bold"}}>
                         Find connections
                     </Text>
